@@ -1,0 +1,38 @@
+diff --git a/node_modules/@headlessui/react/dist/headlessui.dev.cjs b/node_modules/@headlessui/react/dist/headlessui.dev.cjs
+index 7d9973c..cd08492 100644
+--- a/node_modules/@headlessui/react/dist/headlessui.dev.cjs
++++ b/node_modules/@headlessui/react/dist/headlessui.dev.cjs
+@@ -673,7 +673,7 @@ function useSyncRefs(...refs) {
+   });
+   return refs.every(
+     (ref) => ref == null || // @ts-expect-error
+-    (ref == null ? void 0 : ref[Optional])
++      (ref == null ? void 0 : ref[Optional])
+   ) ? void 0 : syncRefs;
+ }
+ 
+@@ -1574,7 +1574,7 @@ function InputFn(props, ref) {
+     }
+     actions.goToOption(5 /* Nothing */);
+   });
+-  let currentDisplayValue = function() {
++  let currentDisplayValue = function () {
+     var _a4;
+     if (typeof displayValue === "function" && data.value !== void 0) {
+       return (_a4 = displayValue(data.value)) != null ? _a4 : "";
+@@ -2835,7 +2835,7 @@ function adjustScrollbarPadding() {
+ 
+ // src/hooks/document-overflow/handle-ios-locking.ts
+ function handleIOSLocking() {
+-  if (!isIOS()) {
++  if (true) {
+     return {};
+   }
+   let scrollPosition;
+diff --git a/node_modules/@headlessui/react/dist/hooks/document-overflow/handle-ios-locking.js b/node_modules/@headlessui/react/dist/hooks/document-overflow/handle-ios-locking.js
+index 1232f54..ff25462 100644
+--- a/node_modules/@headlessui/react/dist/hooks/document-overflow/handle-ios-locking.js
++++ b/node_modules/@headlessui/react/dist/hooks/document-overflow/handle-ios-locking.js
+@@ -1 +1 @@
+-import{disposables as m}from'../../utils/disposables.js';import{isIOS as f}from'../../utils/platform.js';function T(){if(!f())return{};let l;return{before(){l=window.pageYOffset},after({doc:o,d:t,meta:s}){function i(n){return s.containers.flatMap(e=>e()).some(e=>e.contains(n))}t.microTask(()=>{if(window.getComputedStyle(o.documentElement).scrollBehavior!=="auto"){let e=m();e.style(o.documentElement,"scroll-behavior","auto"),t.add(()=>t.microTask(()=>e.dispose()))}t.style(o.body,"marginTop",`-${l}px`),window.scrollTo(0,0);let n=null;t.addEventListener(o,"click",e=>{if(e.target instanceof HTMLElement)try{let r=e.target.closest("a");if(!r)return;let{hash:c}=new URL(r.href),a=o.querySelector(c);a&&!i(a)&&(n=a)}catch{}},!0),t.addEventListener(o,"touchmove",e=>{e.target instanceof HTMLElement&&!i(e.target)&&e.preventDefault()},{passive:!1}),t.add(()=>{window.scrollTo(0,window.pageYOffset+l),n&&n.isConnected&&(n.scrollIntoView({block:"nearest"}),n=null)})})}}}export{T as handleIOSLocking};
++import { disposables as m } from '../../utils/disposables.js'; import { isIOS as f } from '../../utils/platform.js'; function T() { if (true) return {}; let l; return { before() { l = window.pageYOffset }, after({ doc: o, d: t, meta: s }) { function i(n) { return s.containers.flatMap(e => e()).some(e => e.contains(n)) } t.microTask(() => { if (window.getComputedStyle(o.documentElement).scrollBehavior !== "auto") { let e = m(); e.style(o.documentElement, "scroll-behavior", "auto"), t.add(() => t.microTask(() => e.dispose())) } t.style(o.body, "marginTop", `-${l}px`), window.scrollTo(0, 0); let n = null; t.addEventListener(o, "click", e => { if (e.target instanceof HTMLElement) try { let r = e.target.closest("a"); if (!r) return; let { hash: c } = new URL(r.href), a = o.querySelector(c); a && !i(a) && (n = a) } catch { } }, !0), t.addEventListener(o, "touchmove", e => { e.target instanceof HTMLElement && !i(e.target) && e.preventDefault() }, { passive: !1 }), t.add(() => { window.scrollTo(0, window.pageYOffset + l), n && n.isConnected && (n.scrollIntoView({ block: "nearest" }), n = null) }) }) } } } export { T as handleIOSLocking };

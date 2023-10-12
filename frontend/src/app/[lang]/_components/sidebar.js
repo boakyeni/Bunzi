@@ -5,6 +5,7 @@ const Sidebar = () => {
     
     return (
         <aside className="relative self-start h-screen sticky top-0 bg-[#ffffff] col-span-1 max-lg:hidden rounded-tr-3xl shadow-2xl">
+            
             <div className="flex flex-col h-screen fixed top-3 place-items-end w-1/5 justify-around">
                 <h1 className=" fixed top-3 text-2xl text-center px-[1rem] py-[3rem]">Bunzi Cloud</h1>
                 <div className="fixed top-48 flex flex-col w-1/5 place-items-end ">
